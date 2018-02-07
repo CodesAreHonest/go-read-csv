@@ -38,7 +38,7 @@ func retrieve_data_with_channel(directory string, indicator string, msg chan str
 	}
 
 	// obtain the time after execution
-	fmt.Printf("FINISH retrieve all rows of data from %s files with T%.5fs seconds.", indicator, time.Since(start).Seconds())
+	fmt.Printf("FINISH retrieve all rows of data from %s files with %.5fs seconds.", indicator, time.Since(start).Seconds())
 	msg <- " " 
 
 }
@@ -82,5 +82,22 @@ func concurrent_csv() {
 		// obtain the time after execution
 	fmt.Printf("T%.5fs seconds on retrieve all the data CONCURRENTLY. \n", time.Since(start).Seconds())
 }
+
+/**
+
+BEGIN retrieve data from postcode files. 
+BEGIN retrieve data from subject files. 
+BEGIN retrieve data from company files. 
+FINISH retrieve all rows of data from subject files with 0.12362s seconds. 
+FINISH retrieve all rows of data from postcode files with 15.21926s seconds. 
+FINISH retrieve all rows of data from company files with 36.22334s seconds. 
+T36.22355s seconds on retrieve all the data CONCURRENTLY. 
+
+real	0m36.478s
+user	0m52.337s
+sys	0m0.719s
+
+**/
+
 
 
